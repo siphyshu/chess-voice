@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Chess Voice",
+  "version": "0.2.0",
+  "description": "Talk to your opponent over peer-to-peer voice while playing on chess.com or lichess.",
+  "minimum_chrome_version": "116",
+  "permissions": [
+    "offscreen",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.chess.com/*",
+    "https://chess.com/*",
+    "https://lichess.org/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.chess.com/*",
+        "https://chess.com/*",
+        "https://lichess.org/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

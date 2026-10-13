@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Chess Voice · Microphone</title>
+<style>
+  :root { color-scheme: light dark; --bg: #f6f5f2; --fg: #1d1c1a; --muted: #6b6862; --accent: #4a8f3c; }
+  @media (prefers-color-scheme: dark) { :root { --bg: #1b1a18; --fg: #ecebe7; --muted: #9a968e; --accent: #7fbf6a; } }
+  body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: var(--bg); color: var(--fg);
+         font: 16px/1.5 system-ui, -apple-system, sans-serif; }
+  main { max-width: 420px; padding: 24px; text-align: center; }
+  h1 { font-size: 22px; margin: 0 0 8px; }
+  p { color: var(--muted); margin: 0 0 20px; }
+  button { font: inherit; font-weight: 600; padding: 10px 20px; border: 0; border-radius: 8px;
+           background: var(--accent); color: #fff; cursor: pointer; }
+  .ok { color: var(--accent); font-weight: 600; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Allow microphone access</h1>
+  <p id="msg">Chess Voice needs your microphone so your opponent can hear you. You only have to do this once.</p>
+  <button id="allow">Allow microphone</button>
+</main>
+<script src="permission.js"></script>
+</body>
+</html>
