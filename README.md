@@ -25,7 +25,8 @@ To talk before a game starts, both type the same **room code** instead.
 
 - **Spectators can join.** Game IDs are public, so the 2 slots go to whoever clicks first.
   Use a room code if you want privacy.
-- **No TURN relay.** Only STUN is configured, so some strict networks (corporate or carrier NAT)
-  won't connect. Add a TURN server to `new Peer(…, { config: { iceServers } })` in `offscreen.js` to fix that.
+- **Relies on PeerJS's free relay for strict networks.** PeerJS ships default TURN servers
+  (`*.turn.peerjs.com`) that relay encrypted audio when a direct link fails. They're free with no
+  uptime promise; pass your own `config: { iceServers }` to `new Peer(…)` in `offscreen.js` for reliability.
 - Chromium only. Firefox doesn't support `chrome.offscreen`.
 - Relies on the public PeerJS broker. For anything serious, self-host `peerjs-server`.
