@@ -11,6 +11,7 @@
   <img src="https://img.shields.io/github/manifest-json/v/siphyshu/chess-voice?label=version&color=4b7c3d" alt="Version">
   <img src="https://img.shields.io/badge/manifest-v3-4b7c3d" alt="Manifest V3">
   <img src="https://img.shields.io/badge/Chrome-116%2B-4b7c3d?logo=googlechrome&logoColor=white" alt="Chrome 116+">
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/siphyshu/chess-voice?color=4b7c3d" alt="MIT License"></a>
   <!-- After the Chrome Web Store listing is live, add (replace <id>):
   <a href="https://chromewebstore.google.com/detail/<id>"><img src="https://img.shields.io/chrome-web-store/v/<id>?label=web%20store&color=4b7c3d" alt="Chrome Web Store"></a>
   <img src="https://img.shields.io/chrome-web-store/users/<id>?color=4b7c3d" alt="Users">
@@ -94,3 +95,7 @@ The release workflow checks the tag matches the manifest and publishes a GitHub 
 Chess Voice doesn't read the board, suggest moves or interact with your game. Talking to your opponent is fine; taking move advice from anyone during a game isn't. Follow each site's fair-play rules.
 
 Chess Voice is an independent project and is not affiliated with lichess.org or chess.com.
+
+## License
+
+[MIT](LICENSE). Bundles [PeerJS](https://github.com/peers/peerjs) (MIT, see `vendor/peerjs.LICENSE`).
