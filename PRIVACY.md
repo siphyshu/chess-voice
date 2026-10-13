@@ -35,4 +35,4 @@ You can mute, deafen or leave at any time. You can revoke microphone access in C
 
 ## Contact
 
-Questions: [contact email or link]
+Questions or problems: siphyshu@gmail.com

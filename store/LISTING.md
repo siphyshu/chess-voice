@@ -67,7 +67,7 @@ Lets two players on chess.com or lichess.org talk to each other by voice during 
 - I do not use or transfer user data for purposes that are unrelated to my item's single purpose
 - I do not use or transfer user data to determine creditworthiness or for lending purposes
 
-**Privacy policy URL:** _needs a public URL for `PRIVACY.md`_
+**Privacy policy URL:** https://github.com/siphyshu/chess-voice/blob/main/PRIVACY.md
 
 ## Test instructions (for the reviewer)
 
