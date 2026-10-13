@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Privacy Policy · Chess Voice</title>
+<meta name="description" content="What the Chess Voice extension accesses, where that data goes, and what the developer collects (nothing).">
+<meta name="theme-color" content="#121811">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="./"><img src="assets/icon-128.png" alt="" width="32" height="32"><span>Chess Voice</span></a>
+  <nav aria-label="Main">
+    <a href="./#how">How it works</a>
+    <a href="./#privacy">Privacy</a>
+    <a href="https://github.com/siphyshu/chess-voice">GitHub</a>
+  </nav>
+  <a class="btn small" href="https://github.com/siphyshu/chess-voice/releases/latest">Get it</a>
+</header>
+
+<main class="doc">
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: October 13, 2026</p>
+  <p>Chess Voice lets two people talk by voice while playing on chess.com or lichess.org. It has no servers of its own, no accounts, no analytics and no tracking. This page explains exactly what it touches and where that data goes.</p>
+
+  <h2>What the extension accesses</h2>
+  <ul>
+    <li><strong>Your microphone</strong>, only after you click <strong>Join</strong> and grant permission. It stops as soon as you click <strong>Leave</strong>.</li>
+    <li><strong>The address of the chess page you're on</strong>, to read the game ID so both players end up in the same voice room.</li>
+    <li><strong>Player usernames shown on the game page</strong>, so your opponent sees who they're talking to.</li>
+  </ul>
+
+  <h2>Where your data goes</h2>
+  <div class="table-wrap">
+    <table>
+      <thead><tr><th>Data</th><th>Sent to</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Your voice</td><td>The other person in your room, encrypted (WebRTC DTLS-SRTP). Usually directly; if your networks block a direct link, it passes through a PeerJS relay server (<code>eu-0.turn.peerjs.com</code> / <code>us-0.turn.peerjs.com</code>), which forwards the encrypted audio but can't decrypt it</td><td>That's the voice chat</td></tr>
+        <tr><td>Your username and whether you're muted</td><td>Directly to the other person in your room</td><td>Shown on their widget</td></tr>
+        <tr><td>A scrambled room ID (a hash of the game ID or room name) and your IP address</td><td>The public PeerJS server at <code>0.peerjs.com</code>, run by the open-source PeerJS project</td><td>To introduce the two browsers so they can connect</td></tr>
+        <tr><td>Your IP address</td><td>A Google STUN server (<code>stun.l.google.com</code>) and, when needed, the PeerJS relay servers</td><td>So your browser can learn its public network address and connect through restrictive networks</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>Your voice is never sent to the developer, and the PeerJS servers can't listen to it. The extension doesn't record or store audio.</p>
+
+  <h2>What's stored on your device</h2>
+  <p>The widget's position and whether it's collapsed are saved in your browser's extension storage. While you're granting microphone permission, the room you were joining is briefly kept in session storage. None of this leaves your device.</p>
+
+  <h2>What the developer collects</h2>
+  <p>Nothing. The developer receives no data from the extension, and doesn't sell, share or use data for advertising, credit or any purpose other than the voice chat itself.</p>
+
+  <h2>Your choices</h2>
+  <p>You can mute, deafen or leave at any time. You can revoke microphone access in Chrome's site settings for the extension, and you can remove the extension to delete everything it stored.</p>
+
+  <h2>Contact</h2>
+  <p>Questions or problems: <a href="mailto:siphyshu@gmail.com">siphyshu@gmail.com</a></p>
+</main>
+
+<footer class="foot">
+  <div class="foot-row">
+    <a class="brand" href="./"><img src="assets/icon-128.png" alt="" width="24" height="24"><span>Chess Voice</span></a>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/siphyshu/chess-voice">GitHub</a>
+      <a href="mailto:siphyshu@gmail.com">siphyshu@gmail.com</a>
+    </nav>
+  </div>
+  <p>Not affiliated with lichess.org or chess.com. © 2026 Jaiyank Saxena · MIT License</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Chess Voice · Talk to your opponent while you play</title>
+<meta name="description" content="A free Chrome extension that adds peer-to-peer voice chat to your games on lichess.org and chess.com. Both players click Join and you're talking.">
+<meta name="theme-color" content="#121811">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/icon-32.png">
+<link rel="apple-touch-icon" href="assets/icon-128.png">
+<meta property="og:title" content="Chess Voice">
+<meta property="og:description" content="Talk to your opponent while you play on lichess.org and chess.com.">
+<meta property="og:image" content="https://chess-voice.siphyshu.me/assets/og.png">
+<meta property="og:url" content="https://chess-voice.siphyshu.me/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600;700&family=Noto+Sans+Symbols+2&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+
+<header class="nav">
+  <a class="brand" href="./"><img src="assets/icon-128.png" alt="" width="32" height="32"><span>Chess Voice</span></a>
+  <nav aria-label="Main">
+    <a href="#how">How it works</a>
+    <a href="#privacy">Privacy</a>
+    <a href="https://github.com/siphyshu/chess-voice">GitHub</a>
+  </nav>
+  <!-- Swap to the Chrome Web Store URL once the listing is live. -->
+  <a class="btn small get" href="https://github.com/siphyshu/chess-voice/releases/latest">Get it</a>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Free Chrome extension · lichess.org &amp; chess.com</p>
+      <h1>Talk to your opponent <em>while you play.</em></h1>
+      <p class="lede">Chess Voice adds a small voice card to your game. Both players click Join and you're talking. No accounts, no invite links.</p>
+      <div class="ctas">
+        <!-- Swap to the Chrome Web Store URL and "Add to Chrome" once the listing is live. -->
+        <a class="btn primary get" href="https://github.com/siphyshu/chess-voice/releases/latest">Get Chess Voice</a>
+        <a class="btn ghost" href="#how">How it works</a>
+      </div>
+      <p class="fine">Works in Chrome, Edge, Brave and Arc. Chrome Web Store listing coming soon.</p>
+    </div>
+
+    <div class="demo" id="demo">
+      <div class="board" id="board" aria-label="Chessboard showing an Italian Game position"></div>
+      <div class="demo-widget">
+        <span class="hint" id="hint">Try it</span>
+        <div class="w-card" id="w">
+          <div class="w-head" id="wHead">
+            <span class="w-dot" id="wDot"></span>
+            <span class="w-title" id="wTitle">Voice</span>
+            <button class="w-ib" id="wHeadMute" type="button" hidden></button>
+            <button class="w-chev" id="wChev" type="button" aria-label="Collapse">▼</button>
+          </div>
+          <div class="w-body">
+            <div id="wIdle" class="w-stack">
+              <button class="w-btn primary" id="wJoin" type="button">Join voice for this game</button>
+              <div class="w-row">
+                <span class="w-input">or name a room…</span>
+                <span class="w-btn w-fixed">Join</span>
+              </div>
+            </div>
+            <div id="wActive" class="w-stack loose" hidden>
+              <div class="w-peer">
+                <div class="w-av" id="wAv">…</div>
+                <div class="w-peer-text">
+                  <div class="w-name" id="wName"></div>
+                  <div class="w-status" id="wStatus"></div>
+                </div>
+              </div>
+              <div class="w-meter-row" id="wMeterRow">
+                <span>Your mic</span>
+                <div class="w-meter" id="wMeter"><i></i><i></i><i></i><i></i><i></i></div>
+                <span class="w-meter-label" id="wMeterLabel"></span>
+              </div>
+              <div class="w-row">
+                <button class="w-btn" id="wMute" type="button" aria-pressed="false"></button>
+                <button class="w-btn" id="wDeaf" type="button" aria-pressed="false"></button>
+              </div>
+              <div class="w-vol">Volume <span class="w-track"></span></div>
+              <button class="w-btn danger" id="wLeave" type="button">Leave</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="how" id="how">
+    <h2>Set up in under a minute</h2>
+    <ol class="steps">
+      <li>
+        <span class="step-n">1</span>
+        <h3>Install the extension</h3>
+        <p>Add Chess Voice to your browser. It only runs on lichess.org and chess.com.</p>
+      </li>
+      <li>
+        <span class="step-n">2</span>
+        <h3>Open a game and click Join</h3>
+        <p>A Voice card appears in the corner of your game. Your opponent clicks Join too.</p>
+      </li>
+      <li>
+        <span class="step-n">3</span>
+        <h3>Talk</h3>
+        <p>You're connected. Mute, deafen or tuck the card away whenever you like.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section class="features">
+    <h2>Everything a game needs. Nothing it doesn't.</h2>
+    <div class="feature-grid">
+      <article class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="9.5" class="ring"/></svg>
+        <h3>See who's talking</h3>
+        <p>A green ring lights up when your opponent speaks, and a meter shows your own mic is working.</p>
+      </article>
+      <article class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/><path d="M3 3l18 18"/></svg>
+        <h3>Mute within reach</h3>
+        <p>Mute and deafen buttons, a volume slider, and a mute button that stays visible when the card is collapsed.</p>
+      </article>
+      <article class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 0 1 14-5.3M20 12a8 8 0 0 1-14 5.3"/><path d="M18 3v4h-4M6 21v-4h4"/></svg>
+        <h3>Survives rematches</h3>
+        <p>Start a new game and keep talking. The call isn't tied to the page you're on.</p>
+      </article>
+      <article class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h10M4 17h7"/><circle cx="18" cy="17" r="3"/></svg>
+        <h3>Private rooms</h3>
+        <p>Name any room and have a friend type the same name. Handy for going over a game together.</p>
+      </article>
+      <article class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+        <h3>Knows who you're with</h3>
+        <p>Shows your opponent's name, and a muted icon when they've muted themselves.</p>
+      </article>
+      <article class="feature">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="8" width="18" height="8" rx="4"/><circle cx="8" cy="12" r="1.5"/></svg>
+        <h3>Stays out of the way</h3>
+        <p>Collapse the card into a small pill and drag it anywhere on the page.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="privacy" id="privacy">
+    <div class="privacy-copy">
+      <h2>Private by design.</h2>
+      <p>Your voice goes between you and your opponent, encrypted the whole way. If a network blocks a direct connection, an encrypted relay passes it along without being able to listen.</p>
+      <ul class="checks">
+        <li>No accounts, no sign-up</li>
+        <li>No analytics, no tracking, no recordings</li>
+        <li>Open source under the MIT license</li>
+      </ul>
+      <a class="text-link" href="privacy.html">Read the privacy policy →</a>
+    </div>
+    <svg class="p2p" viewBox="0 0 600 260" role="img" aria-label="Two players connected directly by an encrypted voice link">
+      <g transform="translate(90 130)">
+        <rect x="-78" y="-78" width="156" height="156" rx="28" class="p2p-box"/>
+        <circle cx="0" cy="-16" r="26" class="p2p-av"/><text x="0" y="-7" text-anchor="middle" class="p2p-letter">Y</text>
+        <text x="0" y="46" text-anchor="middle" class="p2p-name">you</text>
+      </g>
+      <g transform="translate(510 130)">
+        <rect x="-78" y="-78" width="156" height="156" rx="28" class="p2p-box"/>
+        <circle cx="0" cy="-16" r="26" class="p2p-av"/><text x="0" y="-7" text-anchor="middle" class="p2p-letter">K</text>
+        <text x="0" y="46" text-anchor="middle" class="p2p-name">knight_owl</text>
+      </g>
+      <path d="M180 130H420" class="p2p-line"/>
+      <path d="M412 118l14 12-14 12M188 118l-14 12 14 12" class="p2p-arrow"/>
+      <rect x="262" y="90" width="76" height="30" rx="15" class="p2p-lock-bg"/>
+      <path d="M292 101v-3a8 8 0 0 1 16 0v3" class="p2p-shackle"/><rect x="288" y="101" width="24" height="15" rx="3" class="p2p-lock"/>
+      <text x="300" y="176" text-anchor="middle" class="p2p-cap">encrypted</text>
+    </svg>
+  </section>
+
+  <section class="faq">
+    <h2>Questions</h2>
+    <div class="faq-list">
+      <details>
+        <summary>Does my opponent need it too?</summary>
+        <p>Yes. Both players need Chess Voice installed. Whoever clicks Join second connects to whoever joined first.</p>
+      </details>
+      <details>
+        <summary>Is it allowed on lichess and chess.com?</summary>
+        <p>Chess Voice doesn't read the board, suggest moves or touch your game. Talking to your opponent is fine; taking move advice from anyone during a game isn't. Chess.com's rules about browser extensions are broadly worded, so if you're unsure, stick to casual games there.</p>
+      </details>
+      <details>
+        <summary>Can spectators join?</summary>
+        <p>A game's voice room has two seats, and they go to the first two people who click Join. If you want a guaranteed private conversation, both type the same name into “or name a room…” instead.</p>
+      </details>
+      <details>
+        <summary>Which browsers does it work in?</summary>
+        <p>Chrome, Edge, Brave, Arc and other Chromium browsers on desktop (version 116 or newer). It doesn't work in Firefox, Safari or on phones.</p>
+      </details>
+      <details>
+        <summary>What if it doesn't connect?</summary>
+        <p>Chess Voice falls back to an encrypted relay automatically on networks that block direct connections. If you're still stuck on “Waiting”, both players click Leave and Join again.</p>
+      </details>
+      <details>
+        <summary>Does it cost anything?</summary>
+        <p>No. It's free and open source. The code is on <a href="https://github.com/siphyshu/chess-voice">GitHub</a>.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="closer">
+    <img src="assets/icon-128.png" alt="" width="72" height="72">
+    <h2>Your next game, with voice.</h2>
+    <a class="btn primary get" href="https://github.com/siphyshu/chess-voice/releases/latest">Get Chess Voice</a>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-row">
+    <a class="brand" href="./"><img src="assets/icon-128.png" alt="" width="24" height="24"><span>Chess Voice</span></a>
+    <nav aria-label="Footer">
+      <a href="privacy.html">Privacy</a>
+      <a href="https://github.com/siphyshu/chess-voice">GitHub</a>
+      <a href="mailto:siphyshu@gmail.com">siphyshu@gmail.com</a>
+    </nav>
+  </div>
+  <p>Not affiliated with lichess.org or chess.com. © 2026 Jaiyank Saxena · MIT License</p>
+</footer>
+
+<script src="assets/demo.js"></script>
+</body>
+</html>
