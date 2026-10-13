@@ -18,6 +18,8 @@ Talk to your opponent over peer-to-peer voice while playing on chess.com or lich
 ```
 Talk to your opponent while you play.
 
+Works on lichess.org and chess.com.
+
 Open a game on lichess.org or chess.com and a small Voice card appears in the corner. Click "Join voice for this game". When your opponent does the same, you're connected. No accounts, no invite links, nothing to set up.
 
 • Peer-to-peer and encrypted: voice goes straight between the two players
@@ -38,8 +40,9 @@ Chess Voice is an independent project and is not affiliated with chess.com or li
 
 **Images:**
 - Icon: `icons/icon-128.png`
-- Small promo tile: `store/promo-small-440x280.png`
-- Screenshots (1280×800): _to take, see below_
+- Small promo tile: `store/images/promo-small-440x280.png`
+- Screenshots, upload in this order: `store/images/screenshot-1-1280x800.png` … `screenshot-5-1280x800.png`
+- Marquee (optional): `store/images/marquee-1400x560.png`
 
 ## Privacy practices tab
 
@@ -80,9 +83,3 @@ Testing needs two Chrome profiles (or two computers), each with the extension an
 To test the game flow, start a game against a friend, or play both sides from the two profiles, and click "Join voice for this game" in both.
 ```
 
-## Screenshots to take (1280×800)
-
-Set the browser window to 1280×800, then capture lichess.org with the widget visible:
-1. A game in progress with the card connected and the opponent speaking (green ring).
-2. The card waiting: "Waiting for <name>".
-3. The collapsed pill next to the board.
