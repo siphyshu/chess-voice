@@ -12,10 +12,7 @@
   <img src="https://img.shields.io/badge/manifest-v3-4b7c3d" alt="Manifest V3">
   <img src="https://img.shields.io/badge/Chrome-116%2B-4b7c3d?logo=googlechrome&logoColor=white" alt="Chrome 116+">
   <a href="LICENSE"><img src="https://img.shields.io/github/license/siphyshu/chess-voice?color=4b7c3d" alt="MIT License"></a>
-  <!-- After the Chrome Web Store listing is live, add (replace <id>):
-  <a href="https://chromewebstore.google.com/detail/<id>"><img src="https://img.shields.io/chrome-web-store/v/<id>?label=web%20store&color=4b7c3d" alt="Chrome Web Store"></a>
-  <img src="https://img.shields.io/chrome-web-store/users/<id>?color=4b7c3d" alt="Users">
-  -->
+  <a href="https://chromewebstore.google.com/detail/chess-voice/jnidnodiapcflodgkdbjaipldjjadnga"><img src="https://img.shields.io/chrome-web-store/v/jnidnodiapcflodgkdbjaipldjjadnga?label=web%20store&color=4b7c3d" alt="Chrome Web Store"></a>
 </p>
 
 <p align="center">
@@ -45,7 +42,9 @@
 
 ## Install
 
-**From source** (Chrome, Edge, Brave, Arc):
+**[Add Chess Voice from the Chrome Web Store](https://chromewebstore.google.com/detail/chess-voice/jnidnodiapcflodgkdbjaipldjjadnga)**. Works in Chrome, Edge, Brave and Arc.
+
+**From source**:
 
 1. Download or clone this repo.
 2. Open `chrome://extensions` and turn on **Developer mode**.
