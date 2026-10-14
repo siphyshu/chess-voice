@@ -11,28 +11,34 @@ Copy each field into the developer dashboard. Images are in this folder.
 **Name:** Chess Voice
 
 **Summary** (from manifest, ≤132 chars):
-Talk to your opponent over peer-to-peer voice while playing on chess.com or lichess.
+Voice chat with your opponent while you play on lichess and chess.com. One click, peer-to-peer and encrypted.
 
 **Description:**
 
 ```
-Talk to your opponent while you play.
+Voice chat for online chess. Talk to your opponent while you play on lichess.org and chess.com, with one click and no accounts.
 
-Works on lichess.org and chess.com.
+HOW IT WORKS
+Open a game and a small Voice card appears in the corner. Click "Join voice for this game". When your opponent does the same, you're in a voice call. No sign-up, no invite links, no Discord server to set up.
 
-Open a game on lichess.org or chess.com and a small Voice card appears in the corner. Click "Join voice for this game". When your opponent does the same, you're connected. No accounts, no invite links, nothing to set up.
-
-• Peer-to-peer and encrypted: voice goes straight between the two players
-• See your mic level and when your opponent is speaking
+FEATURES
+• Peer-to-peer, encrypted voice chat between the two players
+• Speaking indicator and mic level meter
 • Mute, deafen and volume controls
-• Shows your opponent's name and when they're muted
-• Keeps talking through rematches
-• Name a private room to chat with a friend before or between games
-• Collapses into a small pill so it stays out of your way
+• See your opponent's name and when they're muted
+• The call keeps going through rematches
+• Private rooms: name a room to talk with a friend before or after a game, or while you analyse together
+• Collapses into a small pill that stays out of your way
 
-Both players need the extension. Chess Voice doesn't read the board, suggest moves or interact with your game in any way. Please follow each site's fair-play rules: don't take move advice from anyone during a game.
+GOOD TO KNOW
+• Both players need the extension
+• Works in Chrome, Edge, Brave and other Chromium browsers
+• Free and open source: github.com/siphyshu/chess-voice
 
-Chess Voice is an independent project and is not affiliated with chess.com or lichess.org.
+FAIR PLAY
+Chess Voice doesn't read the board, suggest moves or interact with your game. Talking is fine; taking move advice during a game isn't. Please follow each site's fair-play rules.
+
+Chess Voice is an independent project and is not affiliated with lichess.org or chess.com.
 ```
 
 **Category:** Communication

@@ -4,7 +4,7 @@
 
 <h1 align="center">Chess Voice</h1>
 
-<p align="center">Talk to your opponent while you play on lichess.org and chess.com.</p>
+<p align="center">Voice chat with your opponent while you play on lichess.org and chess.com.</p>
 
 <p align="center">
   <a href="https://github.com/siphyshu/chess-voice/actions/workflows/ci.yml"><img src="https://github.com/siphyshu/chess-voice/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
